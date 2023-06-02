@@ -1,22 +1,48 @@
-import React from 'react'
+import React from "react";
+import "./Contact.css";
 
 const Contact = () => {
   return (
-   <div>
-      
-      <iframe
-        src="https://forms.gle/nDVG2LiLkAuBrjXp9"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        title="Contact Form"
-      >
-        Loading...
-      </iframe>
+    <div className="contact-container">
+      <h2 className="contact-heading">Feel Free to Contact Us</h2>
+
+      <div className="contact-form">
+        <form
+          action=""
+          method="POST"
+          className="form-inputs"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            autoComplete="off"
+            required
+          />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            autoComplete="off"
+            required
+          />
+
+          <textarea
+            name="message"
+            placeholder="Message"
+            rows="6"
+            autoComplete="off"
+            required
+          ></textarea>
+
+          <button type="submit" className="submit-button">
+            Send
+          </button>
+        </form>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Contact;

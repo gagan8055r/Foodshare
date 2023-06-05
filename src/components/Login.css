@@ -6,7 +6,8 @@
 }
 
 .login-form {
-    width: 300px;
+    z-index: 2;
+    width: 500px;
     padding: 20px;
     background-color: #f2f2f2;
     border-radius: 5px;
@@ -16,13 +17,11 @@
 .login-form h2 {
     text-align: center;
     margin-bottom: 20px;
-        display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .form-group {
     margin-bottom: 20px;
+    
 }
 
 label {
@@ -30,9 +29,11 @@ label {
 }
 
 input {
-    width: 100%;
+    width: 70vh;
     padding: 10px;
     border-radius: 3px;
+    position: relative;
+    top: 0px;
     border: 1px solid #ccc;
 }
 

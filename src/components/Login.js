@@ -1,44 +1,85 @@
+
 import React, { useState } from 'react';
 import './Login.css';
+// import { json } from 'react-router-dom';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [userData, setUserdata] = useState({
+    email:"",
+    password:"",
+  });
+  // const [password, setPassword] = useState('');
 
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
+  // const handleEmailChange = (e) => {
+  //   setEmail(e.target.value);
+  // };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  // const handlePasswordChange = (e) => {
+  //   setPassword(e.target.value);
+  // };
+  let name,value;
+  const postChange=(e)=>{
+name=e.target.name;
+value=e.target.value;
 
-  const handleSubmit = (e) => {
+setUserdata({...userData,[name]:value})
+
+  }
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    const {email,password}=userData;
+    const res=await fetch('https://foodconnect-a8083-default-rtdb.firebaseio.com/userDataRecord/agentRecord.json',
+      {  method:'POST',
+      headers:{
+      'Content-Type':'application/json',
+  },
+  body:JSON.stringify({
+    email,
+    password,
+  }),
+    }
+    );
+ if(res)
+ {
+  setUserdata({
+    email:"",
+    password:""
+  })
+  alert('Data stored')
+
+
+ }
+ else
+ {
+  alert("Please fill the data")
+ }
   };
 
   return (
     <div className="login-form-container">
-
+    
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <h2>AGENT'S LOGIN</h2>
+          <label htmlFor="username">Email:</label>
           <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={handleUsernameChange}
+          name='email'
+            type="email"
+            id="email"
+            value={userData.email}
+            onChange={postChange}
             required
           />
         </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
           <input
+          name='password'
             type="password"
             id="password"
-            value={password}
-            onChange={handlePasswordChange}
+            value={userData.password}
+            onChange={postChange}
             required
           />
         </div>

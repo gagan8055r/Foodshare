@@ -74,8 +74,8 @@ textarea {
     z-index: 1;
     position: relative;
     bottom: 120px;
-    
-        left: 10px;
+    width: 200px;
+        left: 300px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }

@@ -1,37 +1,41 @@
-import React, { useState } from 'react'
-import firebase from './firebase'
+import React, { useEffect, useState } from 'react'
+import './Details.css';
+import { collection,doc,getDocs } from 'firebase/firestore'
+import db from '../components/firebase'
 const Details = () => {
 
+    const[products,setProducts]=useState({})
 
-    const[allDocs,setAllDocs]=useState([])
-    const[singleDoc,setSingleDoc]=useState({})
+    
+ useEffect(() => {
+    const fetchData = async () => {
+      const colRef = collection(db, 'foodDetails');
+      const snapshots = await getDocs(colRef);
+      const docs = snapshots.docs.map((doc) => {
+        const data = doc.data();
+        data.id = doc.id;
+        return data;
+      });
+      console.log(docs);
+      setProducts(docs);
+    };
 
-    const db=firebase.firestore();
-
-function fetchAll(e)
-{
-  e.preventDefault();
-
-  db.collection("foodDetails")
-  .get()
-  .then((snapshot)=>{
-    if(snapshot.docs.length>0)
-    {
-        snapshot.docs.forEach((doc)=>{
-            setAllDocs((prev)=>{
-                return[...prev,doc.data()]
-            })
-        })
-    }
-  })
-  console.log(allDocs);
-}
+    fetchData();
+  }, []);
 
 
   return (
     <div>
-      <h2>Fetch Data</h2>
-      <button onClick={fetchAll}>Show Food Details</button>
+    <div className='container'>
+        <h2> Data Fetched</h2>
+        {Object.keys(products).map((id) => (
+          <div key={id}>
+            <h2>Humidity</h2><h3>{products[id].Humidity}</h3>
+           <h2>Temperature</h2> <h3>{products[id].Temperature}</h3>
+           <h2>LightIntensity</h2> <h3>{products[id].LightIntensity}</h3>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

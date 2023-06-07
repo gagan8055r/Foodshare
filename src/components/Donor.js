@@ -11,7 +11,8 @@ const Donor = () => {
     email:"",
     password:"",
   });
-
+ 
+ 
   let name,value;
   const postChange=(e)=>{
 name=e.target.name;
@@ -56,7 +57,7 @@ setUserdata({...userData,[name]:value})
     
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <h2>DONOR'S LOGIN</h2>
+          <h2 style={{color:'rebeccapurple'}}>DONOR'S LOGIN</h2>
           <label htmlFor="username">Email:</label>
           <input
           name='email'

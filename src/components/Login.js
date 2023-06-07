@@ -1,22 +1,15 @@
 
 import React, { useState } from 'react';
 import './Login.css';
-// import { json } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+
+  const navigate = useNavigate();
   const [userData, setUserdata] = useState({
     email:"",
     password:"",
   });
-  // const [password, setPassword] = useState('');
-
-  // const handleEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  // };
-
-  // const handlePasswordChange = (e) => {
-  //   setPassword(e.target.value);
-  // };
+ 
   let name,value;
   const postChange=(e)=>{
 name=e.target.name;
@@ -46,7 +39,7 @@ setUserdata({...userData,[name]:value})
     email:"",
     password:""
   })
-  alert('Data stored')
+   navigate('/donor/agentdetails');
 
 
  }
@@ -61,7 +54,7 @@ setUserdata({...userData,[name]:value})
     
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-group">
-          <h2>AGENT'S LOGIN</h2>
+          <h2 style={{color:'rebeccapurple'}}>AGENT'S LOGIN</h2>
           <label htmlFor="username">Email:</label>
           <input
           name='email'

@@ -1,7 +1,48 @@
-import React from "react";
+import React,{useState}  from "react";
 import "./Contact.css";
 
 const Contact = () => {
+const [userData, setUserdata] = useState({
+    name:"",
+    email:"",
+  });
+ 
+  let name,value;
+  const postChange=(e)=>{
+name=e.target.name;
+value=e.target.value;
+
+setUserdata({...userData,[name]:value})
+
+  }
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    const {name,email}=userData;
+    const res=await fetch('https://foodconnect-a8083-default-rtdb.firebaseio.com/userDataRecord/contactRecord.json',
+      {  method:'POST',
+      headers:{
+      'Content-Type':'application/json',
+  },
+  body:JSON.stringify({
+    email,
+   name,
+  }),
+    }
+    );
+ if(res)
+ {
+  setUserdata({
+    email:"",
+   name:"",
+  })
+  alert("Thanks for contacting us")
+ }
+ else
+ {
+  alert("Please fill the data")
+ }
+  };
   return (
     <div className="contact-container">
       <h2 className="contact-heading">Feel Free to Contact Us</h2>
@@ -11,6 +52,7 @@ const Contact = () => {
           action=""
           method="POST"
           className="form-inputs"
+          onSubmit={handleSubmit}
         >
           <input
             type="text"
@@ -18,15 +60,20 @@ const Contact = () => {
             placeholder="Name"
             autoComplete="off"
             width="200px"
-            required
+            value={userData.name}
+            onChange={postChange}
+            required className="input-contact"
           />
 
           <input
             type="email"
             name="email"
             placeholder="Email"
+             value={userData.email}
+            onChange={postChange}
             autoComplete="off"
-            required
+            required className="input-contact" 
+            
           />
 
                  <button type="submit" className="submit-button">

@@ -26,6 +26,9 @@ const Details = () => {
 
   return (
     <div>
+
+      {/* <button id='btn' onSubmit={handleButtonClick}>Show Food Details</button> 
+        */}
     <div className='container'>
         <h2> Data Fetched</h2>
         {Object.keys(products).map((id) => (
@@ -41,3 +44,4 @@ const Details = () => {
 }
 
 export default Details
+

@@ -9,7 +9,7 @@ const Details = () => {
     
  useEffect(() => {
     const fetchData = async () => {
-      const colRef = collection(db, 'foodDetails');                ////Data mapping from collections named foodDetails and by map function we are getting one by one data//
+      const colRef = collection(db, 'foodDetails');
       const snapshots = await getDocs(colRef);
       const docs = snapshots.docs.map((doc) => {
         const data = doc.data();

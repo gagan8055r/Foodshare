@@ -13,7 +13,8 @@ const Home = () => {
 
   <nav class="navbar">
   <div class="navbar-logo">
-    <a href="/">FOOD SHARE</a>
+    
+  <a href="/" style={{ fontStyle: 'italic', fontSize: '25px',color:"black"}} className='title-name'>FoodConnect</a>
 
   </div>
   <ul class="navbar-links">
@@ -24,9 +25,9 @@ const Home = () => {
      
     
   <Button sx={{margin:3}} variant='contained'> <li><a href="/"style={{color:"white"}} >Home</a></li></Button>
-   <Button   sx={{margin:3}} variant='contained' > <li><a href="/about" style={{color:"white"}} >About Us</a></li></Button>
    <Button sx={{margin:3}} variant='contained'><li><a href="/mission" style={{color:"white"}}>Mission</a></li></Button> 
-    <Button sx={{margin:3}} variant='contained'><li><a href="/login" style={{color:"white"}}>Login/Register</a></li></Button>
+   <Button   sx={{margin:3}} variant='contained' > <li><a href="/donor" style={{color:"white"}} >Donor Login</a></li></Button>
+    <Button sx={{margin:3}} variant='contained'><li><a href="/login" style={{color:"white"}}>Agent Login</a></li></Button>
  <Button sx={{margin:3}} variant='contained'> <li><a href="/contact" style={{color:"white"}} >Contact Us</a></li></Button>
 
 

@@ -1,4 +1,6 @@
 // let arr=[10,2,4,20,9,40];
+import React from "react";
+import { useReducer } from "react";
 
 // console.log(arr.reduce((acc))=>{
     
@@ -84,67 +86,86 @@
 
 // function sub(a,b)
 // {
-//     return a-b;
+// //     return a-b;
+// // }
+
+// // const calculator=(num1,num2,oper)=>{
+// // return oper(num1,num2);
+
+// // }
+
+// // console.log(calculator(2,3,add));
+// // console.log(calculator(2,3,sub));
+// // // console.log(full);
+
+// // var myName;
+// // let myName="dcvfbn";
+// // let myName="dfghj"
+// // var myName="dfghj"
+// // var myName="dfghj"
+// // console.log(myName);
+// // // myName="gagan"
+// // console.log(myName);
+
+// // hoisting is the property in js where the variable name defined using var keyword 
+
+// // const fun1=()=>{
+
+// //     console.log("this is fun 1");
+// //   fun2();
+// //   console.log("this is fun 1 again");
+// // }
+
+// // const fun2=()=>{
+// //     console.log("this is fun 2");
+// // }
+
+// // fun1();
+// // const fun1=()=>{
+
+// //     console.log("this is fun 1");
+// //   fun2();
+// //   console.log("this is fun 1 again");
+// // }
+
+// // const fun2=()=>{
+
+// //     setTimeout(()=>{
+
+// //         console.log("this is fun 2");
+// //     },2000)
+// // }
+
+// // fun1();
+
+// // function sum(num1){
+// // return function(num2){
+// //     return function(num3)
+// //     {
+// //         return num1+num2+num3;
+// //     }
+// // }
+// // }
+
+
+// // console.log(sum(5)(3)(5));
+
+
+
+// // usereducer hook is react used in state management it will be having two parameters that take reducer function and initial state 
+// // in reducer function it should be pure functions (means it should not effect any state values and should give same results for same argument passed in it) and 
+// // it takes 2 arguements action and state  and it should return any value
+// const reducer=(state,action)=>{
+// return state;
 // }
 
-// const calculator=(num1,num2,oper)=>{
-// return oper(num1,num2);
 
-// }
+// const[state,dispatch]=useReducer(reducer,initialState)
 
-// console.log(calculator(2,3,add));
-// console.log(calculator(2,3,sub));
-// // console.log(full);
-
-// var myName;
-// let myName="dcvfbn";
-// let myName="dfghj"
-// var myName="dfghj"
-// var myName="dfghj"
-// console.log(myName);
-// // myName="gagan"
-// console.log(myName);
-
-// hoisting is the property in js where the variable name defined using var keyword 
-
-// const fun1=()=>{
-
-//     console.log("this is fun 1");
-//   fun2();
-//   console.log("this is fun 1 again");
-// }
-
-// const fun2=()=>{
-//     console.log("this is fun 2");
-// }
-
-// fun1();
-// const fun1=()=>{
-
-//     console.log("this is fun 1");
-//   fun2();
-//   console.log("this is fun 1 again");
-// }
-
-// const fun2=()=>{
-
-//     setTimeout(()=>{
-
-//         console.log("this is fun 2");
-//     },2000)
-// }
-
-// fun1();
-
-function sum(num1){
-return function(num2){
-    return function(num3)
-    {
-        return num1+num2+num3;
-    }
-}
-}
+// return
+// (
+//     <div>
 
 
-console.log(sum(5)(3)(5));
-
+//     </div>
+// )

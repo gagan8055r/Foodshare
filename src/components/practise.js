@@ -1,6 +1,6 @@
 // let arr=[10,2,4,20,9,40];
-import React from "react";
-import { useReducer } from "react";
+// import React from "react";
+// import { useReducer } from "react";
 
 // console.log(arr.reduce((acc))=>{
     
@@ -169,3 +169,44 @@ import { useReducer } from "react";
 
 //     </div>
 // )
+
+
+// // function clickme()
+// // {
+// //  console.log("this is console");
+// //     alert("this is 2 exercise")
+// //     // console.error("this is error");
+// //     console.warn("this is error");
+// //     console.group("g1");console.log("hello");console.error("error");console.groupEnd("g1")
+// //     console.group("g2");console.log("hello2");console.error("error2");console.groupEnd("g2")
+// // }
+
+
+// // // var tables=[{name:"gagan",age:21},{name:"liks",age:21}] 
+// // // console.log(tables);
+
+// // // console.table(tables);
+// // var a=10
+// // undefined
+// // var b=20
+// // undefined
+// // var c="a is less than b"
+// // undefined
+// // console.assert(a,b,{a,b,c})
+// // undefined
+// // console.assert(a<b,{a,b,c})
+// // undefined
+// // console.assert(a>b,{a,b,c})
+// //  Assertion failed: {a: 10, b: 20, c: 'a is less than b'}
+
+
+// localStorage.setItem("name","gagan")
+// undefined
+// sessionStorage.setItem("name","liks")
+// undefined
+// sessionStorage.getItem("name")
+// 'liks'
+// localStorage.getItem("name")
+// 'gagan'
+// localStorage.removeItem("name")
+// undefined

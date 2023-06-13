@@ -21,6 +21,7 @@
 
 .form-group {
     margin-bottom: 20px;
+    /* width: 100px; */
 
 }
 
@@ -29,7 +30,7 @@ label {
 }
 
 input {
-    width: 70vh;
+    width: 65vh;
     padding: 10px;
     border-radius: 3px;
     position: relative;
@@ -41,6 +42,7 @@ button {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
+    margin: 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;

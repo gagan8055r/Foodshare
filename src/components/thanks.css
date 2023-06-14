@@ -1,0 +1,21 @@
+.contents
+{
+    border: 2px solid gold  ;
+        width: 1000px;
+        
+       
+        height: 280px;
+        position: relative;
+        top: 160px;
+        
+        left: 180px;
+        padding: 10px 10px;
+        z-index: 1;
+        color: azure;
+        border-radius: 20px;
+        box-shadow: 15px 15px 15px rosybrown;
+}
+.contents b{
+    color: aquamarine;
+}
+

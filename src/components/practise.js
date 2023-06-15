@@ -170,43 +170,28 @@
 //     </div>
 // )
 
-
-// // function clickme()
-// // {
-// //  console.log("this is console");
-// //     alert("this is 2 exercise")
-// //     // console.error("this is error");
-// //     console.warn("this is error");
-// //     console.group("g1");console.log("hello");console.error("error");console.groupEnd("g1")
-// //     console.group("g2");console.log("hello2");console.error("error2");console.groupEnd("g2")
-// // }
+// const fs = require('fs');
+///const url = require('url');
+//const http = require('http');
+// // fs.writeFileSync("index.txt","hello")
+// fs.readFile("index.txt","utf-8",(err,data)=>{
+//     console.log(data)
+// })
+// // console.log(content.toString());
 
 
-// // // var tables=[{name:"gagan",age:21},{name:"liks",age:21}] 
-// // // console.log(tables);
 
-// // // console.table(tables);
-// // var a=10
-// // undefined
-// // var b=20
-// // undefined
-// // var c="a is less than b"
-// // undefined
-// // console.assert(a,b,{a,b,c})
-// // undefined
-// // console.assert(a<b,{a,b,c})
-// // undefined
-// // console.assert(a>b,{a,b,c})
-// //  Assertion failed: {a: 10, b: 20, c: 'a is less than b'}
+// const server=http.createServer((req,res)=>{
+//     const pathName=req.url
 
+//     if(pathName==="/")
+//     res.end("hello this is my first website")
+//     if(pathName==="/home")
+//     res.end("hello this is home page")
+//     else
+//     res.end("404 error page found")
+// })
 
-// localStorage.setItem("name","gagan")
-// undefined
-// sessionStorage.setItem("name","liks")
-// undefined
-// sessionStorage.getItem("name")
-// 'liks'
-// localStorage.getItem("name")
-// 'gagan'
-// localStorage.removeItem("name")
-// undefined
+// server.listen(8000,"127.0.0.1",()=>{
+//     console.log("the website is running at port number 8000....");
+// })

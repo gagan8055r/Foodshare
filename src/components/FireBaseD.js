@@ -1,5 +1,6 @@
 import {initializeApp} from 'firebase/app'
 
+// import {getFirestore} from 'firebase/firestore'
 const firebaseConfig = {
   apiKey: "AIzaSyADdOVuiff16-9FZmrrOFl2qpX2lZGdWyI",
   authDomain: "foodconnect-a8083.firebaseapp.com",
@@ -12,4 +13,5 @@ const firebaseConfig = {
 
 
  const app=initializeApp(firebaseConfig);
+// const db=getFirestore(app);
  export default app;

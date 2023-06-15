@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import "./AgentDetails.css";
 import { collection,doc,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
+import Details from './Details';
 const AgentDetails = () => {
  
     const[products,setProducts]=useState({})

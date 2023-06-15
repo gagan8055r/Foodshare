@@ -171,27 +171,103 @@
 // )
 
 // const fs = require('fs');
-///const url = require('url');
-//const http = require('http');
 // // fs.writeFileSync("index.txt","hello")
 // fs.readFile("index.txt","utf-8",(err,data)=>{
-//     console.log(data)
-// })
-// // console.log(content.toString());
-
-
-
-// const server=http.createServer((req,res)=>{
-//     const pathName=req.url
+    //     console.log(data)
+    // })
+    // // console.log(content.toString());
+    
+    
+//     const http = require('http');
+//     // const url = require('url');
+    
+//     const server=http.createServer((req,res)=>{
+//         const pathName=req.url
 
 //     if(pathName==="/")
-//     res.end("hello this is my first website")
+//     {
+
+//         res.writeHead(200)
+//         res.end("hello this is my first website")
+//     }
 //     if(pathName==="/home")
-//     res.end("hello this is home page")
-//     else
-//     res.end("404 error page found")
+//     {
+
+//         res.writeHead(200)
+//        res.end("hello this is home page")
+//     }
+//     if(pathName==="/about")
+//     {
+
+//         res.writeHead(200)
+//        res.end("this is about page")
+//     }
+//     if(pathName==='/contact')
+//     {
+
+//         res.writeHead(200)
+//        res.end("this is conatct page")
+//     }
+//     if(pathName==='/services')
+//     {
+
+//         res.writeHead(200)
+//        res.end("this is services page")
+//     }
+//   else
+//   {
+// res.writeHead(404)
+//       res.end("error 404 page not found")
+//   }
 // })
 
 // server.listen(8000,"127.0.0.1",()=>{
 //     console.log("the website is running at port number 8000....");
 // })
+
+
+const http = require('http');
+const fs = require('fs');
+// const path = require('path');
+
+
+const data=fs.readFileSync("data.json","utf-8")
+const dataObj=JSON.parse(data)
+const server = http.createServer((req, res) => {
+  const pathName = req.url;
+  
+
+  if (pathName === '/') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, this is my first website');
+  } else if (pathName === '/home') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello, this is the home page');
+  } else if (pathName === '/about') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('This is the about page');
+  } else if (pathName === '/contact') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('This is the contact page');
+  } else if (pathName === '/services') {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('This is the services page');
+  } 
+         else if(pathName==='/api')
+         {   res.writeHead(400,{
+          "Content-type":"application/json"
+         })
+         res.end(data)
+
+         }
+  else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Error 404: Page not found');
+  }
+});
+
+server.listen(8000, '127.0.0.1', () => {
+  console.log('The website is running at port number 8000....');
+});
+
+

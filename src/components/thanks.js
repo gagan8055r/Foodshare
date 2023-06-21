@@ -1,6 +1,14 @@
 import React from 'react'
 import './Thanks.css'; 
+import { useNavigate } from 'react-router-dom';
 const Thanks = () => {
+const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+      navigate('/');
+    
+  };
   return (
  
     
@@ -28,10 +36,8 @@ Thank you for being a beacon of hope and for joining us on this important journe
 
 
 </p>
+<button onClick={handleSubmit}>Home Page</button>
        </div>
-
-
- 
   )
 }
 

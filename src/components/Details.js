@@ -3,12 +3,13 @@ import './Details.css';
 import { collection,doc,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
 import { useNavigate } from 'react-router-dom';
+import Address from './Address';
 const Details = () => {
 const navigate = useNavigate();
     const[products,setProducts]=useState({})
     const[address,setAddress]=useState('')
 
-    
+    const location=address
  useEffect(() => {
     const fetchData = async () => {
       const colRef = collection(db, 'foodDetails');
@@ -40,6 +41,7 @@ const handleSubmit = async (e) => {
     if (res.ok) {
       setAddress('')
       alert("form submitted")
+      // console.log(address);
 
       navigate('/donor/details/thanks');
    
@@ -50,9 +52,7 @@ const handleSubmit = async (e) => {
 
   return (
     <div>
-
-      {/* <button id='btn' onSubmit={handleButtonClick}>Show Food Details</button> 
-        */}
+<Address data={location} ></Address>
     <div className='container'>
         <h2 style={{color:"tomato"}}> Data Fetched</h2>
         {Object.keys(products).map((id) => (
@@ -68,12 +68,13 @@ const handleSubmit = async (e) => {
       <div className="address">
 
 
-        <label htmlFor="address">Please enter the address to be donated : 
+        <label htmlFor="address">Please enter the address of Donation : 
           <input type="text" value={address}
           name='address'
            id="address"
             onChange={(e) => {
               setAddress(e.target.value)
+              
             }}
             required />
         </label>

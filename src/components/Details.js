@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Details.css';
+// import { Link } from 'react-router-dom';
 import { collection,doc,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
 import { useNavigate } from 'react-router-dom';
@@ -10,8 +11,7 @@ const navigate = useNavigate();
     const[products,setProducts]=useState({})
     const[address,setAddress]=useState("")
 
-    const location=address
-    
+
     useEffect(() => {
       const fetchData = async () => {
         const colRef = collection(db, 'foodDetails');
@@ -28,6 +28,8 @@ const navigate = useNavigate();
     fetchData();
   }, []);
   const handleSubmit = async (e) => {
+
+
     e.preventDefault();
     const res = await fetch('https://foodconnect-a8083-default-rtdb.firebaseio.com/userDataRecord/addressRecord.json', {
       method: 'POST',
@@ -45,12 +47,21 @@ const navigate = useNavigate();
       alert("form submitted")
       console.log(address);
       
-      navigate({state:{id:location}})
+      // navigate({state:{id:location}})
+      // <Link to={url}>Go to Receiver Page</Link>
       navigate('/donor/details/thanks');
       
     } else {
       alert("Please fill the address");
     }
+
+
+const dataToSend = {
+address:address
+    };
+
+    localStorage.setItem('myData', JSON.stringify(dataToSend));
+  
   };
   
   // <AgentDetails data={location}></AgentDetails>
@@ -90,4 +101,5 @@ const navigate = useNavigate();
 }
 
 export default Details
+
 

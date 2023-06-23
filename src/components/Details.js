@@ -3,7 +3,8 @@ import './Details.css';
 import { collection,doc,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
 import { useNavigate } from 'react-router-dom';
-import Address from './Address';
+// import Address from './Address';
+import AgentDetails from './AgentDetails';
 const Details = () => {
 const navigate = useNavigate();
     const[products,setProducts]=useState({})
@@ -22,9 +23,10 @@ const navigate = useNavigate();
       console.log(docs);
       setProducts(docs);
     };
-
+    
     fetchData();
   }, []);
+  <AgentDetails data={location}></AgentDetails>
 const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch('https://foodconnect-a8083-default-rtdb.firebaseio.com/userDataRecord/addressRecord.json', {
@@ -41,7 +43,7 @@ const handleSubmit = async (e) => {
     if (res.ok) {
       setAddress('')
       alert("form submitted")
-      // console.log(address);
+      console.log(address);
 
       navigate('/donor/details/thanks');
    
@@ -52,7 +54,6 @@ const handleSubmit = async (e) => {
 
   return (
     <div>
-<Address data={location} ></Address>
     <div className='container'>
         <h2 style={{color:"tomato"}}> Data Fetched</h2>
         {Object.keys(products).map((id) => (

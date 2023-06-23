@@ -2,9 +2,9 @@ import React,{useState,useEffect} from 'react'
 import "./AgentDetails.css";
 import { collection,doc,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
-import Address from './Address';
+// import Address from './Address';
 
-const AgentDetails = () => {
+const AgentDetails = (props) => {
  
     const[products,setProducts]=useState({})
 
@@ -38,7 +38,7 @@ const AgentDetails = () => {
             <h2>Humidity</h2><h3>{products[id].Humidity}</h3>
            <h2>Temperature</h2> <h3>{products[id].Temperature}</h3>
            <h2>LightIntensity</h2> <h3>{products[id].LightIntensity}</h3>
-         <Address></Address>
+         <h3>{props.data}</h3>
           </div>
         ))}
       </div>

@@ -8,15 +8,14 @@ import { useNavigate } from 'react-router-dom';
 const Details = () => {
 const navigate = useNavigate();
     const[products,setProducts]=useState({})
-    const[address,setAddress]=useState({
-      name:""
-    })
+    const[address,setAddress]=useState("")
 
     const location=address
- useEffect(() => {
-    const fetchData = async () => {
-      const colRef = collection(db, 'foodDetails');
-      const snapshots = await getDocs(colRef);
+    
+    useEffect(() => {
+      const fetchData = async () => {
+        const colRef = collection(db, 'foodDetails');
+        const snapshots = await getDocs(colRef);
       const docs = snapshots.docs.map((doc) => {
         const data = doc.data();
         data.id = doc.id;
@@ -46,6 +45,7 @@ const navigate = useNavigate();
       alert("form submitted")
       console.log(address);
       
+      navigate({state:{id:location}})
       navigate('/donor/details/thanks');
       
     } else {

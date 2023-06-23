@@ -2,16 +2,26 @@ import React,{useState,useEffect} from 'react'
 import "./AgentDetails.css";
 import { collection,doc,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 
 const AgentDetails = () => {
  
     const[products,setProducts]=useState({})
-const loc=useLocation()
-console.log(loc.state);
+const [receivedData, setReceivedData] = useState(null);
     
  useEffect(() => {
+
+
+  const storedData = localStorage.getItem('myData');
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      setReceivedData(parsedData);
+      // localStorage.removeItem('myData');
+    }
+
+
+  
     const fetchData = async () => {
       const colRef = collection(db, 'foodDetails');
       const snapshots = await getDocs(colRef);
@@ -20,12 +30,12 @@ console.log(loc.state);
         data.id = doc.id;
         return data;
       });
-      console.log(docs);
+      // console.log(docs);
       setProducts(docs);
     };
 
     fetchData();
-  }, []);
+  },[]);
 
 
   return (
@@ -40,8 +50,16 @@ console.log(loc.state);
             <h2>Humidity</h2><h3>{products[id].Humidity}</h3>
            <h2>Temperature</h2> <h3>{products[id].Temperature}</h3>
            <h2>LightIntensity</h2> <h3>{products[id].LightIntensity}</h3>
-<h3>{loc.state.id}</h3>
-           {/* <h2>loanbhjvh</h2>  */}
+<h1>Receiver Page</h1>
+      {/* {receivedData && receivedData.message ? ( */}
+        <div>
+          <p style={{color:'red'}}>Received Message: {receivedData.address}</p>
+          {/* <p>Received User: {receivedData.user}</p> */}
+        </div>
+      {/* ) : ( */}
+        {/* <p>No data received.</p> */}
+      {/* )} */}
+          
        
           </div>
         ))}

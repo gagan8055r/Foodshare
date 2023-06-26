@@ -102,4 +102,3 @@ address:address
 
 export default Details
 
-

@@ -4,12 +4,16 @@ import './Details.css';
 import { collection,doc,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
 import { useNavigate } from 'react-router-dom';
+// import { dataRef } from './fireBaseF';
 // import Address from './Address';
 // import AgentDetails from './AgentDetails';
 const Details = () => {
 const navigate = useNavigate();
     const[products,setProducts]=useState({})
     const[address,setAddress]=useState("")
+    // const[food,setFood]=useState("")
+    // const[time,setTime]=useState("")
+    const[quantity,setQuantity]=useState("")
 
 
     useEffect(() => {
@@ -57,17 +61,23 @@ const navigate = useNavigate();
 
 
 const dataToSend = {
-address:address
+address:address,
+food:food,
+time:time,
+quantity:quantity
     };
 
     localStorage.setItem('myData', JSON.stringify(dataToSend));
   
   };
   
-  // <AgentDetails data={location}></AgentDetails>
+  // const[name,setName]=useState('')
+  // const handlehand=()=>{
+  //   dataRef.ref().child('all').push(name)
+  // }
   return (
     <div>
-    <div className='container'>
+    {/* <div className='container'>
         <h2 style={{color:"tomato"}}> Data Fetched</h2>
         {Object.keys(products).map((id) => (
           <div key={id}>
@@ -75,8 +85,15 @@ address:address
            <h2 >Temperature</h2> <h3>{products[id].Temperature}</h3>
            <h2 >LightIntensity</h2> <h3>{products[id].LightIntensity}</h3>
           </div>
-        ))}
-      </div>
+        )
+        )}
+      </div> */}
+{/* <div>
+  <input type="text"  value={name} onChange={(e)=>{
+    setName(e.target.value)
+  }}/>
+  <button onClick={handlehand}>ADD</button>
+</div> */}
          <form >
            
       <div className="address">
@@ -92,7 +109,37 @@ address:address
             }}
             required />
         </label>
-        <button type="button" onClick={handleSubmit}>Submit</button>
+        <label htmlFor="food">Food to be donated : 
+          <input type="text" value={food}
+          name='food'
+           id="food"
+            onChange={(e) => {
+              setFood(e.target.value)
+              
+            }}
+            required />
+        </label>
+        <label htmlFor="time">Time of food preparated : 
+          <input type="number" value={time}
+          name='time'
+           id="time"
+            onChange={(e) => {
+              setTime(e.target.value)
+              
+            }}
+            required />
+        </label>
+        <label htmlFor="time">Quantity: 
+          <input type="text" value={quantity}
+          name='text'
+           id="text"
+            onChange={(e) => {
+              setQuantity(e.target.value)
+              
+            }}
+            required />
+        </label>
+        <button type="button" onClick={handleSubmit} className='agentbtn'>Submit</button>
       </div>
       
             </form>

@@ -1,6 +1,19 @@
+/* 
 
+/* #btn
+{
+    z-index: 2;
+    cursor: pointer;
+    color: red;
+} */
+/* button
+{
+    z-index: 2;
+        cursor: pointer;
+        color: red;
+} */
 
-h3{
+ h3{
     color: blue;
 
 }
@@ -13,5 +26,52 @@ h2{
     position: relative;
     top: 180px;
     color: azure;
-    left: 150px;
+    left: 500px;
+    display: flex;
+    flex-direction: column;
+     column-gap:10px; 
+     gap: 10px; 
+    width: 300px;
+    align-items: center;
+  
 }
+ .agentbtn{ 
+     width: 100px; 
+ }   
+ /* .timeD
+ {
+    width: 50px;
+ } */
+ 
+/* .container {
+    text-align: center;
+}
+
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 8px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+button.agentbtn {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.agentbtn:hover {
+    background-color: #45a049;
+}
+
+.form-error {
+    color: red;
+    margin-top: 10px;
+} */

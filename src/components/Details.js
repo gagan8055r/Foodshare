@@ -11,8 +11,8 @@ const Details = () => {
 const navigate = useNavigate();
     const[products,setProducts]=useState({})
     const[address,setAddress]=useState("")
-    // const[food,setFood]=useState("")
-    // const[time,setTime]=useState("")
+    const[food,setFood]=useState("")
+    const[time,setTime]=useState("")
     const[quantity,setQuantity]=useState("")
 
 

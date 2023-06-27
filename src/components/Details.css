@@ -24,14 +24,14 @@ h2{
 .address
 {
     position: relative;
-    top: 180px;
+    top: 100px;
     color: azure;
     left: 500px;
     display: flex;
     flex-direction: column;
      column-gap:10px; 
      gap: 10px; 
-    width: 300px;
+    width: 350px;
     align-items: center;
   
 }

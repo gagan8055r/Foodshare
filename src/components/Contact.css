@@ -27,7 +27,8 @@ iframe{
     height: 250px;
     position: relative;
     bottom: 100px;
-    right: 360px;
+    left: -270px;
+    /* right: 500px; */
 }
 .contact-form {
     max-width: 50rem;

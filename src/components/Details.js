@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import './Details.css';
-// import { Link } from 'react-router-dom';
-import { collection,doc,getDocs } from 'firebase/firestore'
+
+import { collection,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
 import { useNavigate } from 'react-router-dom';
-// import { dataRef } from './fireBaseF';
-// import Address from './Address';
-// import AgentDetails from './AgentDetails';
+
 const Details = () => {
 const navigate = useNavigate();
-    const[products,setProducts]=useState({})
+    const[,setProducts]=useState({})
     const[address,setAddress]=useState("")
     const[food,setFood]=useState("")
     const[time,setTime]=useState("")
     const[quantity,setQuantity]=useState("")
-
+const[number,setNumber]=useState('')
 
     useEffect(() => {
       const fetchData = async () => {
@@ -42,17 +40,18 @@ const navigate = useNavigate();
       },
       body: JSON.stringify({
         address,
+        time,
+        food,
+        quantity
+
         
       }),
     });
     
     if (res.ok) {
       setAddress('')
-      alert("form submitted")
-      console.log(address);
-      
-      // navigate({state:{id:location}})
-      // <Link to={url}>Go to Receiver Page</Link>
+      alert("THANK YOU")
+  
       navigate('/donor/details/thanks');
       
     } else {
@@ -64,7 +63,8 @@ const dataToSend = {
 address:address,
 food:food,
 time:time,
-quantity:quantity
+quantity:quantity,
+number:number
     };
 
     localStorage.setItem('myData', JSON.stringify(dataToSend));
@@ -97,15 +97,15 @@ quantity:quantity
          <form >
            
       <div className="address">
+  <h1>DONATION DETAILS</h1>
 
-
-        <label htmlFor="address">Please enter the address of Donation : 
+        <label htmlFor="address"> Address of Donation : 
           <input type="text" value={address}
           name='address'
            id="address"
             onChange={(e) => {
               setAddress(e.target.value)
-              
+    
             }}
             required />
         </label>
@@ -119,7 +119,7 @@ quantity:quantity
             }}
             required />
         </label>
-        <label htmlFor="time">Time of food preparated : 
+        <label htmlFor="time">Time of food prepared (in 24 hours) : 
           <input type="number" value={time}
           name='time'
            id="time"
@@ -137,6 +137,19 @@ quantity:quantity
               setQuantity(e.target.value)
               
             }}
+          
+            required />
+        </label>
+        <label htmlFor="time"> 
+        {/* Phone number:  */}
+          <input type="number" value={number}
+          name='number'
+           id="number"
+            onChange={(e) => {
+              setNumber(e.target.value)
+              
+            }}
+          
             required />
         </label>
         <button type="button" onClick={handleSubmit} className='agentbtn'>Submit</button>

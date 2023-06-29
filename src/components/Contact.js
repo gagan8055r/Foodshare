@@ -4,7 +4,7 @@ import "./Contact.css";
 const Contact = () => {
 const [userData, setUserdata] = useState({
     name:"",
-    email:"",
+    number:"",
   });
  
   let name,value;
@@ -18,14 +18,14 @@ setUserdata({...userData,[name]:value})
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const {name,email}=userData;
+    const {name,number}=userData;
     const res=await fetch('https://foodconnect-a8083-default-rtdb.firebaseio.com/userDataRecord/contactRecord.json',
       {  method:'POST',
       headers:{
       'Content-Type':'application/json',
   },
   body:JSON.stringify({
-    email,
+    number,
    name,
   }),
     }
@@ -33,7 +33,7 @@ setUserdata({...userData,[name]:value})
  if(res)
  {
   setUserdata({
-    email:"",
+    number:"",
    name:"",
   })
   alert("Thanks for contacting us")
@@ -66,10 +66,10 @@ setUserdata({...userData,[name]:value})
           />
 
           <input
-            type="email"
-            name="email"
-            placeholder="Email"
-             value={userData.email}
+            type="number"
+            name="number"
+            placeholder=" Phone Number"
+             value={userData.number}
             onChange={postChange}
             autoComplete="off"
             required className="input-contact" 

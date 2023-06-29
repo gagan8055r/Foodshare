@@ -12,7 +12,7 @@ const navigate = useNavigate();
     const[food,setFood]=useState("")
     const[time,setTime]=useState("")
     const[quantity,setQuantity]=useState("")
-const[number,setNumber]=useState('')
+const[number,setNumber]=useState()
 
     useEffect(() => {
       const fetchData = async () => {
@@ -140,13 +140,14 @@ number:number
           
             required />
         </label>
-        <label htmlFor="time"> 
-        {/* Phone number:  */}
+        <label htmlFor="time"> Phone number: 
           <input type="number" value={number}
           name='number'
            id="number"
             onChange={(e) => {
-              setNumber(e.target.value)
+                const enteredValue = e.target.value;
+      const formattedValue = enteredValue.slice(0, 10); // Extract only the first 10 digits
+      setNumber(formattedValue);
               
             }}
           

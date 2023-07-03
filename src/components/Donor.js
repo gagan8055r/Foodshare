@@ -35,14 +35,7 @@
 
 
 
-//   const navigate = useNavigate();
-//   // const [userData, setUserdata] = useState({
-//   //   email:"",
-//   //   password:"",
-//   // });
-//  const[email,setEmail]=useState('')
-//  const[password,setPassword]=useState('')
- 
+
 // //   let name,value;
 // //   const postChange=(e)=>{
 // // name=e.target.name;
@@ -144,6 +137,7 @@ const Donor = () => {
         const errorCode = error.code;
         alert(errorCode);
       });
+      
   }
 const signIn=()=>{
   signInWithEmailAndPassword(auth, email, password)
@@ -161,7 +155,8 @@ const signIn=()=>{
   });
 
 }
-  const handleSubmit = async (e) => {
+  
+const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch('https://foodconnect-a8083-default-rtdb.firebaseio.com/userDataRecord/donorRecord.json', {
       method: 'POST',

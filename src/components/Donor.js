@@ -1,6 +1,5 @@
 
 // import React, { useState } from 'react';
-// import './Donor.css';
 // import app from './firebase'
 // // import { Route, Routes } from 'react-router-dom';
 // // import Details from './Details';

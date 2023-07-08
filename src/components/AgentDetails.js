@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import "./AgentDetails.css";
 import { collection,doc,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
-// import { useLocation } from 'react-router-dom';
+
 
 
 const AgentDetails = () => {

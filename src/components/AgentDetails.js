@@ -17,7 +17,7 @@ const [receivedData, setReceivedData] = useState(null);
     if (storedData) {
       const parsedData = JSON.parse(storedData);
       setReceivedData(parsedData);
-      // localStorage.removeItem('myData');
+      
     }
 
 

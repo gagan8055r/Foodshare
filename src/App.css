@@ -21,11 +21,7 @@ body::before {
   background-color: rgba(0, 0, 0, 1);
 }
 
-.container {
-  text-align: center;
-  position: relative;
-  top: 10rem;
-}
+
 
 .navbar {
   background-color: wheat;

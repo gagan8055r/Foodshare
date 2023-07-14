@@ -92,7 +92,7 @@ number:number
   <input type="text"  value={name} onChange={(e)=>{
     setName(e.target.value)
   }}/>
-  <button onClick={handlehand}>ADD</button>
+  
 </div> */}
          <form >
            

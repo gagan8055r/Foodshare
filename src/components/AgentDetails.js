@@ -50,7 +50,7 @@ const navigate=useNavigate()
       {/* <button id='btn' onSubmit={handleButtonClick}>Show Food Details</button> 
         */}
     <div className='container'>
-        {/* <h2> Data Fetched</h2> */}
+        
         {Object.keys(products).map((id) => (
           <div key={id}>
             {/* <h2>Humidity</h2><h3>{products[id].Humidity}</h3>

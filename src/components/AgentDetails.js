@@ -3,7 +3,7 @@ import "./AgentDetails.css";
 import { collection,getDocs } from 'firebase/firestore'
 import db from '../components/firebase'
 import { useNavigate } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
+
 
 
 const AgentDetails = () => {

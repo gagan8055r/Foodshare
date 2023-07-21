@@ -29,8 +29,11 @@ const[number,setNumber]=useState()
     
     fetchData();
   }, []);
+
+  
   const handleSubmit = async (e) => {
 
+    
 
     e.preventDefault();
     const res = await fetch('https://foodconnect-a8083-default-rtdb.firebaseio.com/userDataRecord/addressRecord.json', {
@@ -46,17 +49,16 @@ const[number,setNumber]=useState()
 
         
       }),
-    });
-    
-    if (res.ok) {
-      setAddress('')
-      alert("THANK YOU")
-  
-      navigate('/donor/details/thanks');
       
-    } else {
-      alert("Please fill the address");
-    }
+    });
+      if (res.ok) 
+      {
+        // setAddress('')
+        alert("THANK YOU")
+        navigate('/donor/details/thanks');
+        e.preventDefault();
+        
+      } 
 
 
 const dataToSend = {
@@ -92,7 +94,7 @@ number:number
   <input type="text"  value={name} onChange={(e)=>{
     setName(e.target.value)
   }}/>
-  
+  <button onClick={handlehand}>ADD</button>
 </div> */}
          <form >
            

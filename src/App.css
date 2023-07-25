@@ -54,7 +54,6 @@ body::before {
 
 
 .navbar-links li a {
-  text-decoration: none;
   padding: 2rem;
   opacity: 0.8;
 

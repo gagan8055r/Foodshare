@@ -6,7 +6,7 @@ background-image: url('../backgroundimg.jpeg');
 background-size: cover;
 z-index: 10;
   background-position: center;
-  background-repeat: no-repeat;
+  
 
 }
 body::before {

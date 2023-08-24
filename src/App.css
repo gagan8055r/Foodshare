@@ -3,7 +3,6 @@ body{
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;   
 background-image: url('../backgroundimg.jpeg');
-background-size: cover;
 z-index: 10;
 
 }

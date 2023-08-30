@@ -21,7 +21,6 @@ background-image: url('../backgroundimg.jpeg');
 
 .navbar {
   background-color: wheat;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   justify-content: center ;
